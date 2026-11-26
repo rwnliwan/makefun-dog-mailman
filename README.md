@@ -23,4 +23,4 @@ no network, no dependencies.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT (`SPDX-License-Identifier: MIT`) — see [LICENSE](LICENSE).

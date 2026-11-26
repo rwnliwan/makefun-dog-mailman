@@ -1,4 +1,5 @@
 // makefun-dog-mailman — "The Dog Reviews the Mailman"
+// SPDX-License-Identifier: MIT
 // make.fun competition: u-motasimfuad-the-dog-reviews-the-mailman-87608f85
 //
 // The entry is one funny one-line review that a dog gives the mailman,
