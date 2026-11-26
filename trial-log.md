@@ -32,3 +32,28 @@ printer apology, haunted sign, forecast, elevator, hallucinated apology).
 - Kit FRESH downloaded from `/c/<slug>/kit`; `kit.json` bundle_sha256
   `3f35d2006e51634539563ad96426304e337c9e83ce11e3ef90d380f90af7f6f3`
   matches the live API value.
+- Local trial: `node main.ts` exit 0; `/output/entry.txt` is exactly the
+  entry line, 71 characters, 71 bytes.
+- Commit 1 `07d38414bb29bf511c4ca5d29ce771cbf9bc2f1b`; commit 2 `3d13c3978801ac570bee7db061c184601427042e`
+  (SPDX-License-Identifier: MIT added to `main.ts` header + README).
+- `gh repo create` hit the rolling GitHub limit ("created too many
+  repositories, too quickly") — background retry loop running, one attempt
+  every 5 minutes; push + About follow once the repo exists.
+
+## Bundle v1 + check v1 (2026-11-26 ~09:05 WITA)
+
+- Bundle v1: 176,034 bytes, sha256
+  `9e90af4b797a5b3ab0cbd1b6014c847815ad7ab69c8b402d8c8d0191405e8e7d`
+  (session `423044f6-6d6f-4eda-88f0-7caf2103d70e`, 25 turns, 101 lines).
+  Warning: 0 usage rows attached — subagent rows flush only when the run
+  completes; coordinator re-bundles with the usage row from muse.db.
+- Check v1 at commit `3d13c3978801ac570bee7db061c184601427042e`:
+  **13 passed, 1 failed, 5 skipped, 5 checked at submission.**
+  Only failure: `thinking_priced` (0 usage rows) — the known builder
+  ceiling, fixed by the coordinator re-bundle. Passes include
+  `thinking_reproduces` 96.6% (58/60 lines authored, 0 pasted),
+  `thinking_revised` (main.ts from 2 write/edit messages),
+  `license_osi` (SPDX MIT), `entrypoint` (main.ts, node22), `snapshot`
+  (5 files, 5,009 bytes). "At submission" checks (repo_public,
+  repo_owner, repo_created_after_open, commit_in_repo,
+  duplicate_snapshot) are pending the GitHub repo existing + push.
