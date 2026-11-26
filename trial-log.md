@@ -57,3 +57,27 @@ printer apology, haunted sign, forecast, elevator, hallucinated apology).
   (5 files, 5,009 bytes). "At submission" checks (repo_public,
   repo_owner, repo_created_after_open, commit_in_repo,
   duplicate_snapshot) are pending the GitHub repo existing + push.
+- Bundle v2 (from final HEAD `13160bd18fc78101a58d103066fe0cebff5f6291`):
+  184,069 bytes, sha256
+  `8dcc81f37456895f5dd578776ed4dd1be49fa5b8f6fb22478a1e26ce155655ff`.
+  Check v2 at the same commit: **13 passed, 1 failed, 5 skipped, 5
+  checked at submission** — again only `thinking_priced`;
+  `thinking_reproduces` 97.5% (81/83 lines).
+
+## Push + About (2026-11-26 ~09:42 UTC)
+
+- Repo created 09:35:02 UTC after 5 rate-limited attempts
+  (`gh repo create` GraphQL "too many repositories, too quickly",
+  attempts 09:09/09:14/09:19/09:24/09:29 UTC; 6th attempt 09:35
+  succeeded — rolling limit, ~10 repos/hour).
+- `git remote add origin` manual (create did not set origin); push
+  `main` clean; `git ls-remote origin HEAD` =
+  `13160bd18fc78101a58d103066fe0cebff5f6291` = local HEAD.
+- About set + verified via `gh api`: homepage
+  `https://make.fun/c/u-motasimfuad-the-dog-reviews-the-mailman-87608f85`,
+  topics `[ai-agents, bounties, makefun]`, visibility public,
+  default branch main, created 2026-11-26T09:34:58Z (after the
+  competition opened 07:55:18Z), license MIT detected by GitHub.
+- README on GitHub carries the 3 live make.fun badges (competition,
+  rank, reward with repo name `makefun-dog-mailman`); 0 "shields"
+  in any repo file (grep exit 1, re-checked before this commit).
