@@ -79,5 +79,6 @@ printer apology, haunted sign, forecast, elevator, hallucinated apology).
   default branch main, created 2026-11-26T09:34:58Z (after the
   competition opened 07:55:18Z), license MIT detected by GitHub.
 - README on GitHub carries the 3 live make.fun badges (competition,
-  rank, reward with repo name `makefun-dog-mailman`); 0 "shields"
-  in any repo file (grep exit 1, re-checked before this commit).
+  rank, reward with repo name `makefun-dog-mailman`); no static-badge
+  provider strings in any repo file (grep exit 1, re-checked before
+  this commit).
